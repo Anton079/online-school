@@ -1,0 +1,14 @@
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\bin\Debug\net6.0\online-school.exe
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\bin\Debug\net6.0\online-school.deps.json
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\bin\Debug\net6.0\online-school.runtimeconfig.json
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\bin\Debug\net6.0\online-school.dll
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\bin\Debug\net6.0\online-school.pdb
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\obj\Debug\net6.0\online-school.GeneratedMSBuildEditorConfig.editorconfig
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\obj\Debug\net6.0\online-school.AssemblyInfoInputs.cache
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\obj\Debug\net6.0\online-school.AssemblyInfo.cs
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\obj\Debug\net6.0\online-school.csproj.CoreCompileInputs.cache
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\obj\Debug\net6.0\online-school.dll
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\obj\Debug\net6.0\refint\online-school.dll
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\obj\Debug\net6.0\online-school.pdb
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\obj\Debug\net6.0\online-school.genruntimeconfig.cache
+C:\mycode\oop\incapsularea\modificatori-de-acces-constructori\online-school\online-school\obj\Debug\net6.0\ref\online-school.dll
