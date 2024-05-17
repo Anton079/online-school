@@ -20,14 +20,16 @@ namespace online_school
         {
             try
             {
-                StreamReader sr = new StreamReader(this.GetFilePath());
-                
-                string line = " ";
-                while((line = sr.ReadLine()) != null)
+                using (StreamReader sr = new StreamReader(this.GetFilePath()))
                 {
-                    Course course = new Course(line);
-                    this._courses.Add(course);
+                    string line = " ";
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Course course = new Course(line);
+                        this._courses.Add(course);
+                    }
                 }
+                
             }
             catch(Exception ex)
             {
@@ -124,13 +126,26 @@ namespace online_school
             int id = rand.Next(1, 10000000);
 
 
-            while (FindCourseById(id) != null)
+            while (FindCourseById(id) != -1)
             {
                 id = rand.Next(1, 10000000);
             }
 
 
             return id;
+        }
+
+        public bool EditCourseName(int idCourseWanted, string newCourseName)
+        {
+            for(int i = 0; i < _courses.Count; i++)
+            {
+                if (_courses[i].Id == idCourseWanted)
+                {
+                    _courses[i].Name = newCourseName;
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

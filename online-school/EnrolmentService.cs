@@ -20,14 +20,16 @@ namespace online_school
         {
             try
             {
-                StreamReader sr = new StreamReader(this.GetFilePath());
-
-                string line = " ";
-                while ((line = sr.ReadLine()) != null)
+                using (StreamReader sr = new StreamReader(this.GetFilePath()))
                 {
-                    Enrolment enrolment = new Enrolment(line);
-                    this._enrolments.Add(enrolment);
+                    string line = " ";
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Enrolment enrolment = new Enrolment(line);
+                        this._enrolments.Add(enrolment);
+                    }
                 }
+
             }
             catch (Exception ex)
             {
@@ -50,7 +52,7 @@ namespace online_school
         {
             String save = "";
 
-            for (int i = 0; i < _enrolments.Count; i++)
+            for (int i = 0; i < _enrolments.Count-1; i++)
             {
                 save += _enrolments[i].ToSave() + "\n";
             }
@@ -119,15 +121,17 @@ namespace online_school
             return false;
         }
 
-        public bool RemoveEnrolment(Enrolment idEnrolment)
+        public void RemoveEnrolment(Enrolment idEnrolment)
         {
             int wantedEnrolment = FindEnrolmentByStudentId(idEnrolment.Student_id);
             if (wantedEnrolment != -1)
             {
                 this._enrolments.RemoveAt(wantedEnrolment);
-                return true;
             }
-            return false;
+            else
+            {
+                Console.WriteLine("Enrolmentul nu a fost gasit!");
+            }
         }
 
         public int GenerateId()
@@ -137,7 +141,7 @@ namespace online_school
             int id = rand.Next(1, 10000000);
 
 
-            while (FindEnrolmentByStudentId(id) != null)
+            while (FindEnrolmentByStudentId(id) != -1)
             {
                 id = rand.Next(1, 10000000);
             }

@@ -20,14 +20,20 @@ namespace online_school
         {
             try
             {
-                StreamReader sr = new StreamReader(this.GetFilePath());
 
-                string line = " ";
-                while ((line = sr.ReadLine()) != null)
+                using (StreamReader sr = new StreamReader(this.GetFilePath()))
                 {
-                    Student_id_card student_Id_Card = new Student_id_card(line);
-                    this._student_id_card.Add(student_Id_Card);
+
+                    string line = " ";
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Student_id_card student_Id_Card = new Student_id_card(line);
+                        this._student_id_card.Add(student_Id_Card);
+                    }
                 }
+               
+
+               
             }
             catch (Exception ex)
             {
@@ -41,7 +47,7 @@ namespace online_school
 
             string folder = Path.Combine(currentDirectory, "data");
 
-            string file = Path.Combine(folder, "student_id_card");
+            string file = Path.Combine(folder, "student_card");
 
             return file;
         }
@@ -85,7 +91,7 @@ namespace online_school
             }
         }
 
-        public int FindStudentIdCardByNumberCard(int numberCard)
+        public int FindStudentIdCardByNumberCard(string numberCard)
         {
             for(int i = 0; i < _student_id_card.Count;i++)
             {

@@ -141,7 +141,7 @@ namespace online_school
             int id = rand.Next(1, 10000000);
 
 
-            while (FindStudentById(id) != null)
+            while (FindStudentById(id) != -1)
             {
                 id = rand.Next(1, 10000000);
             }
