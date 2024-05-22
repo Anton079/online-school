@@ -149,5 +149,35 @@ namespace online_school
 
             return id;
         }
+
+        public void ShowWantedStundets(List <int> wantedStudents)
+        {
+            if(wantedStudents.Count == 0)
+            {
+                Console.WriteLine("Lista este goala");
+                return;
+            }
+
+            foreach (int x in wantedStudents)
+            {
+                Console.WriteLine("Student id: " + x);
+            }
+        }
+
+        public void ShowWantedYearStudents(List <int> StudentIdByData)
+        {
+            if(StudentIdByData.Count == 0)
+            {
+                Console.WriteLine("Lista este goala");
+                return;
+            }
+
+            foreach(int x in StudentIdByData)
+            {
+                Console.WriteLine("Student id: " + x);
+            }
+        }
+
+        
     }
 }

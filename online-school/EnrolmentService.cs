@@ -108,22 +108,22 @@ namespace online_school
             return false;
         }
 
-        public bool EditEnrolmentId(int IdStudent)
+        public bool EditCourseIdByStId(int idStudent,int courseId)
         {
             for(int i = 0; i < _enrolments.Count; i++)
             {
-                if (_enrolments[i].Student_id == IdStudent)
+                if (_enrolments[i].Student_id == idStudent)
                 {
-                    _enrolments[i].Student_id = IdStudent;
+                    courseId = _enrolments[i].Course_id;
                     return true;
                 }
             }
             return false;
         }
 
-        public void RemoveEnrolment(Enrolment idEnrolment)
+        public void RemoveEnrolment(int idEnrolment)
         {
-            int wantedEnrolment = FindEnrolmentByStudentId(idEnrolment.Student_id);
+            int wantedEnrolment = FindEnrolmentByStudentId(idEnrolment);
             if (wantedEnrolment != -1)
             {
                 this._enrolments.RemoveAt(wantedEnrolment);
@@ -149,5 +149,35 @@ namespace online_school
 
             return id;
         }
+
+        public List<int> FindAllStundetsByACourse(int courseId)
+        {
+            List <int> wantedStudents = new List<int>();
+
+            for(int i = 0; i < _enrolments.Count; i++)
+            {
+                if (_enrolments[i].Course_id==courseId)
+                {
+                    wantedStudents.Add(_enrolments[i].Student_id);
+                }
+            }
+            return wantedStudents;
+        }
+
+        public List<int> FindAllStudentsByAYear(int data)
+        {
+            List <int> ListStudents= new List<int> ();
+
+            for(int i = 0; i < _enrolments.Count;i++)
+            {
+                if (_enrolments[i].Created_at == data)
+                {
+                    ListStudents.Add(_enrolments[i].Student_id);
+                }
+            }
+            return ListStudents;
+        }
+
+        
     }
 }

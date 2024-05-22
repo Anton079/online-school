@@ -92,7 +92,7 @@ namespace online_school
             {
                 if (_courses[i].Id == idCourse)
                 {
-                    return i;
+                    return idCourse;
                 }
             }
             return -1;
@@ -108,9 +108,9 @@ namespace online_school
             return false;
         }
 
-        public bool RemoveCourse(Course idCourse)
+        public bool RemoveCourse(int idCourse)
         {
-            int wantedCourse = FindCourseById(idCourse.Id);
+            int wantedCourse = FindCourseById(idCourse);
             if(wantedCourse != -1)
             {
                 this._courses.RemoveAt(wantedCourse);
@@ -147,5 +147,21 @@ namespace online_school
             }
             return false;
         }
+
+        public int FindIdCourseByName(string wantedCourse)
+        {
+            int nameToId;
+
+            for(int i = 0; i < _courses.Count;i++)
+            {
+                if (_courses[i].Name == wantedCourse)
+                {
+                    return nameToId = _courses[i].Id;
+                }
+            }
+            return -1;
+        }
+
+        
     }
 }

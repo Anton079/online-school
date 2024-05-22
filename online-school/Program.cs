@@ -71,13 +71,13 @@ internal class Program
         //enrolmentService.AddEnrolment(enrolmentTest);
         //enrolmentService.SaveData();
 
-        View view = new View();
+        //View view = new View();
 
-        view.play();
+        //view.play();
 
-        //ViewAdmin admin = new ViewAdmin();
+        ViewAdmin admin = new ViewAdmin();
 
-        //admin.play();
+        admin.play();
 
     }
 }

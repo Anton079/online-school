@@ -11,7 +11,7 @@ namespace online_school
         private int _id;
         private int _student_id;
         private string _book_name;
-        private int _created_at; //data ex 01.05.2024
+        private int _created_at; //data ex 01052024
 
         public Book(string proprietati)
         {

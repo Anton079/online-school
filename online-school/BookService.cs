@@ -107,17 +107,6 @@ namespace online_school
             return false;
         }
 
-        public bool RemoveBook(Book book)
-        {
-            int wantedBook = FindBookById(book.Id);
-            if(wantedBook != -1)
-            {
-                this._book.RemoveAt(wantedBook);
-                return true;
-            }
-            return false;
-        }
-
         public bool EditBookIdById(int BookId, int newIdAdd)
         {
             foreach (Book x in _book)
@@ -173,5 +162,50 @@ namespace online_school
             return id;
         }
 
+        public List <string> FindAllBooksOfAStudentByHisId (int idWanted)
+        {
+            List <string> AllBooks = new List<string>();
+
+            for(int i =0; i < _book.Count; i++)
+            {
+                if (_book[i].Id == idWanted)
+                {
+                    AllBooks.Add(_book[i].Book_name);
+                }
+            }
+            return AllBooks;
+        }
+
+        public void ShowALlBooksOfAStudents(List <string> AllBooks)
+        {
+            for(int i =0; i<AllBooks.Count; i++)
+            {
+                Console.WriteLine($"Cartea {i} = {_book[i].Book_name}");
+            }
+        }
+
+        public bool RemoveBook(int idBookWanted)
+        {
+            int wantedBook = FindBookById(idBookWanted);
+            if(wantedBook != -1)
+            {
+                this._book.RemoveAt(wantedBook);
+                return true;
+            }
+            return false;
+        }
+
+        public int FindBookIdByStId(int idStudentBook, int idBookWanted)
+        {
+            for (int i = 0; i < _book.Count; i++)
+            {
+                if (_book[i].Student_id == idStudentBook)
+                {
+                    idBookWanted = _book[i].Id;
+                    return idBookWanted; 
+                }
+            }
+            return -1; 
+        }
     }
 }
